@@ -57,7 +57,18 @@ const Sidebar = () => {
         </ul>
       </nav>
 
-     
+      {/* Sidebar Footer */}
+      <div className="sidebar-footer">
+        <div className="user-profile">
+          <div className="user-avatar">
+            <div className="avatar-initials">АИ</div>
+          </div>
+          <div className="user-info">
+            <div className="user-name">Александър Иванов</div>
+            <div className="user-role">Администратор</div>
+          </div>
+        </div>
+      </div>
     </aside>
   )
 }

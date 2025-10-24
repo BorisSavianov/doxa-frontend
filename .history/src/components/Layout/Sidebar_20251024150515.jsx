@@ -7,10 +7,10 @@ const Sidebar = () => {
 
   const menuItems = [
     { path: '/dashboard', label: t('Дашборд', 'Dashboard') },
-    { path: '/procedures', label: t('Процедури', 'Procedures') },
-    { path: '/calendar', label: t('Календар', 'Calendar') },
-    { path: '/inbox', label: t('Съобщения', 'Inbox') },
     { path: '/profile', label: t('Профил', 'Profile') },
+    { path: '/inbox', label: t('Съобщения', 'Inbox') },
+    { path: '/calendar', label: t('Календар', 'Calendar') },
+    { path: '/procedures', label: t('Процедури', 'Procedures') },
     { path: '/admin', label: t('Админ', 'Admin') }
   ]
 
@@ -57,7 +57,18 @@ const Sidebar = () => {
         </ul>
       </nav>
 
-     
+      {/* Sidebar Footer */}
+      <div className="sidebar-footer">
+        <div className="user-profile">
+          <div className="user-avatar">
+            <div className="avatar-initials">АИ</div>
+          </div>
+          <div className="user-info">
+            <div className="user-name">Александър Иванов</div>
+            <div className="user-role">Администратор</div>
+          </div>
+        </div>
+      </div>
     </aside>
   )
 }
