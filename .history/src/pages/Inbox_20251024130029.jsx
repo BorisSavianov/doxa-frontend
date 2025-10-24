@@ -179,7 +179,12 @@ const Inbox = () => {
       {/* Header */}
       <div className="inbox-header">
         <h2>{t('Съобщения', 'Inbox')}</h2>
-       
+        <button 
+          className="btn btn-accent compose-btn"
+          onClick={() => setComposing(true)}
+        >
+          {t('✏️ Ново съобщение', '✏️ Compose')}
+        </button>
       </div>
 
       <div className="inbox-layout">

@@ -179,7 +179,12 @@ const Inbox = () => {
       {/* Header */}
       <div className="inbox-header">
         <h2>{t('Съобщения', 'Inbox')}</h2>
-       
+        <button 
+          className="btn btn-accent compose-btn"
+          onClick={() => setComposing(true)}
+        >
+          {t('✏️ Ново съобщение', '✏️ Compose')}
+        </button>
       </div>
 
       <div className="inbox-layout">
@@ -377,10 +382,7 @@ const Inbox = () => {
               exit={{ scale: 0.8, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="compose-header">
-                <h3>{t('Ново съобщение', 'New Message')}</h3>
-                <button className="close-btn" onClick={() => setComposing(false)}>×</button>
-              </div>
+            
               
               <div className="compose-body">
                 <input
