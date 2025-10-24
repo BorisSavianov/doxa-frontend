@@ -87,7 +87,7 @@ const [stats, setStats] = useState([
 
   const tabs = [
     { id: 'overview', label: t('Преглед', 'Overview') },
-
+    { id: 'experience', label: t('Опит', 'Experience') },
   ]
 
   const experiences = [

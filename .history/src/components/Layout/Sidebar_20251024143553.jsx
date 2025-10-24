@@ -10,8 +10,8 @@ const Sidebar = () => {
     { path: '/profile', label: t('Профил', 'Profile'), icon: '👤' },
     { path: '/inbox', label: t('Съобщения', 'Inbox'), icon: '📧' },
     { path: '/calendar', label: t('Календар', 'Calendar'), icon: '📅' },
-    { path: '/admin', label: t('Админ', 'Admin'), icon: '⚙️' },
-       { path: '/procedures', label: t('Процедури', 'Admin'), icon: '⚙️' }
+    { path: '/procedures', label: t('Процедури', 'Procedures'), icon: '📋' }, // Променена иконка
+    { path: '/admin', label: t('Админ', 'Admin'), icon: '⚙️' }
   ]
 
   return (

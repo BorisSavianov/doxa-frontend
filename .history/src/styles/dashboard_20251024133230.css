@@ -1,0 +1,322 @@
+.dashboard {
+    padding: 20px;
+    min-height: 100vh;
+    position: relative;
+}
+
+.dashboard-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #2563eb;
+    background: linear-gradient(90deg, #2563eb 0%, #3b82f6 50%, #2563eb 100%);
+}
+
+.dashboard h2 {
+    color: #2d3748;
+    margin-bottom: 24px;
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.card h2 {
+    color: #2d3748;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 12px;
+}
+
+/* Процедури стилове - цяла ширина */
+.procedures-card.full-width {
+    grid-column: 1 / -1;
+    margin-bottom: 24px;
+}
+
+.procedures-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.procedures-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 24px;
+}
+
+.procedure-section:nth-child(even) {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.procedure-section h3 {
+    font-size: 14px;
+    color: #718096;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.procedure-item {
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.procedure-item.waiting {
+    padding: 12px 16px;
+}
+
+.procedure-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.procedure-info {
+    flex: 1;
+}
+
+.procedure-title {
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 4px;
+}
+
+.procedure-date {
+    font-size: 14px;
+    color: #718096;
+}
+
+.procedure-item:hover {
+    background-color: #f7fafc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.procedure-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Бутон за детайли */
+.details-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    min-width: 80px;
+}
+
+.details-btn:hover {
+    background: #1d4ed8;
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+}
+
+.details-btn:active {
+    transform: translateY(0);
+}
+
+/* Долни секции */
+.bottom-sections {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+/* Аналитики стилове - подобрени */
+.analytics-card.full-width {
+    grid-column: 1 / -1;
+}
+
+.analytics-content {
+    padding: 10px 0;
+}
+
+.analytics-main {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    border-radius: 12px;
+    color: white;
+}
+
+.month {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.trend {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.trend.positive {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.analytics-stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px 15px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    /* transform: translateY(-2px); */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 8px;
+}
+
+.stat-value.accepted {
+    color: #10b981;
+}
+
+.stat-value.rejected {
+    color: #ef4444;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Календар стилове */
+.calendar-placeholder {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7fafc;
+    border-radius: 8px;
+    border: 2px dashed #e2e8f0;
+}
+
+.calendar-placeholder p {
+    color: #a0aec0;
+    font-size: 16px;
+}
+
+/* Responsive дизайн */
+@media (max-width: 1024px) {
+    .procedures-grid {
+        gap: 30px;
+    }
+    
+    .analytics-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        padding: 16px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .procedures-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .bottom-sections {
+        grid-template-columns: 1fr;
+    }
+
+    .procedures-card.full-width {
+        margin-bottom: 20px;
+    }
+
+    .procedure-content {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .details-btn {
+        align-self: flex-end;
+        min-width: 70px;
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+    
+    .analytics-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stat-value {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .month {
+        font-size: 20px;
+    }
+
+    .dashboard h2 {
+        font-size: 24px;
+    }
+    
+    .analytics-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-value {
+        font-size: 24px;
+    }
+    
+    .stat-item {
+        padding: 15px 10px;
+    }
+}

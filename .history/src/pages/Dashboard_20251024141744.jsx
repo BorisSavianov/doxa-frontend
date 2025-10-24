@@ -82,10 +82,81 @@ const Dashboard = () => {
         <div className="card analytics-card full-width">
           <h2>Аналитики</h2>
           <div className="analytics-content">
-            <div className="analytics-main">
-              <div className="month">Септември</div>
-              <div className="trend positive">+2.5% от Август</div>
+            {/* Нова диаграма до аналитиките */}
+            <div className="analytics-with-chart">
+              <div className="analytics-main">
+                <div className="month">Септември</div>
+                <div className="trend positive">+2.5% от Август</div>
+              </div>
+              
+              {/* Анимирана диаграма */}
+              <div className="chart-container">
+                <div className="animated-chart">
+                  <div className="chart-title">Статус на процедури</div>
+                  <div className="chart-bars">
+                    <div className="chart-bar-container">
+                      <div 
+                        className="chart-bar completed-bar" 
+                        data-value="8"
+                        style={{ '--height': '70%' }}
+                      >
+                        <span className="bar-value">8</span>
+                        <div className="bar-label">Завършени</div>
+                      </div>
+                    </div>
+                    <div className="chart-bar-container">
+                      <div 
+                        className="chart-bar pending-bar" 
+                        data-value="3"
+                        style={{ '--height': '30%' }}
+                      >
+                        <span className="bar-value">3</span>
+                        <div className="bar-label">Изчакващи</div>
+                      </div>
+                    </div>
+                    <div className="chart-bar-container">
+                      <div 
+                        className="chart-bar accepted-bar" 
+                        data-value="7"
+                        style={{ '--height': '60%' }}
+                      >
+                        <span className="bar-value">7</span>
+                        <div className="bar-label">Приети</div>
+                      </div>
+                    </div>
+                    <div className="chart-bar-container">
+                      <div 
+                        className="chart-bar rejected-bar" 
+                        data-value="1"
+                        style={{ '--height': '10%' }}
+                      >
+                        <span className="bar-value">1</span>
+                        <div className="bar-label">Отказани</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="chart-legend">
+                    <div className="legend-item">
+                      <div className="legend-color completed"></div>
+                      <span>Завършени</span>
+                    </div>
+                    <div className="legend-item">
+                      <div className="legend-color pending"></div>
+                      <span>Изчакващи</span>
+                    </div>
+                    <div className="legend-item">
+                      <div className="legend-color accepted"></div>
+                      <span>Приети</span>
+                    </div>
+                    <div className="legend-item">
+                      <div className="legend-color rejected"></div>
+                      <span>Отказани</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            
             <div className="analytics-stats">
               <div className="stat-item">
                 <div className="stat-value">12</div>

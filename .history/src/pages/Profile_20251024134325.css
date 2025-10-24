@@ -1,0 +1,106 @@
+/* Name Section with Avatar */
+.name-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.name-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: var(--surface);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Education Preview in Overview */
+.education-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.edu-preview-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 15px;
+  background: var(--background);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.edu-preview-item:hover {
+  transform: translateX(5px);
+  border-color: var(--primary);
+}
+
+.edu-preview-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.edu-preview-details {
+  flex: 1;
+}
+
+.edu-preview-degree {
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+}
+
+.edu-preview-university {
+  color: var(--textSecondary);
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+
+.edu-preview-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.edu-period {
+  font-size: 0.8rem;
+  color: var(--textSecondary);
+  background: rgba(22, 88, 149, 0.1);
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+.edu-grade {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(255, 215, 0, 0.1);
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+/* Responsive adjustments for name section */
+@media (max-width: 768px) {
+  .name-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .name-avatar {
+    align-self: center;
+  }
+}

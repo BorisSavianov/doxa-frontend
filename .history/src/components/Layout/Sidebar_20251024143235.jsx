@@ -11,7 +11,7 @@ const Sidebar = () => {
     { path: '/inbox', label: t('Съобщения', 'Inbox'), icon: '📧' },
     { path: '/calendar', label: t('Календар', 'Calendar'), icon: '📅' },
     { path: '/admin', label: t('Админ', 'Admin'), icon: '⚙️' },
-       { path: '/procedures', label: t('Процедури', 'Admin'), icon: '⚙️' }
+       { path: '/procedures', label: t('Процу', 'Admin'), icon: '⚙️' }
   ]
 
   return (

@@ -12,7 +12,7 @@ const Layout = () => {
     <div className={`app ${isDark ? 'dark' : 'light'}`}>
       <Sidebar />
       <div className="main-content">
-        
+      
         <Outlet />
       </div>
     </div>

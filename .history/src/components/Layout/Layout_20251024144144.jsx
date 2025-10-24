@@ -13,7 +13,7 @@ const Layout = () => {
       <Sidebar />
       <div className="main-content">
         
-        <Outlet />
+     
       </div>
     </div>
   )

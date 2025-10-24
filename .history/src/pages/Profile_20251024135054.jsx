@@ -8,11 +8,15 @@ import {
   Phone, 
   MapPin, 
   Calendar,
+  Award,
   Book,
   Briefcase,
-  CheckCircle,
-  Clock,
-  FileText,
+  Users,
+  Download,
+  Share2,
+  Star,
+  TrendingUp,
+  Target,
   GraduationCap
 } from 'lucide-react'
 import './Profile.css'
@@ -26,6 +30,7 @@ const Profile = () => {
     firstName: 'Александър',
     lastName: 'Иванов',
     position: t('Старши Софтуерен Инженер', 'Senior Software Engineer'),
+    
     university: t('Софийски Университет "Св. Климент Охридски"', 'Sofia University "St. Kliment Ohridski"'),
     degree: t('Магистър по Компютърни Науки', 'Master of Computer Science'),
     email: 'alex.ivanov@techcorp.com',
@@ -37,11 +42,12 @@ const Profile = () => {
     interests: [t('Програмиране', 'Coding'), t('Планински туризъм', 'Hiking'), t('Фотография', 'Photography'), t('Четене', 'Reading')]
   })
 
-const [stats, setStats] = useState([
-  { label: t('Общо процедури', 'Total Procedures'), value: 84, icon: FileText, color: '#165895' },
-  { label: t('Завършени процедури', 'Completed Procedures'), value: 47, icon: CheckCircle, color: '#28a745' },
-  { label: t('Изчакващи процедури', 'Pending Procedures'), value: 12, icon: Clock, color: '#FFD700' },
-])
+  const [stats, setStats] = useState([
+    { label: t('Завършени проекти', 'Completed Projects'), value: 47, icon: Target, color: '#165895' },
+    { label: t('Доволни клиенти', 'Happy Clients'), value: 32, icon: Users, color: '#5FACE6' },
+    { label: t('Години опит', 'Years Experience'), value: 5, icon: TrendingUp, color: '#FFD700' },
+    { label: t('Награди', 'Awards'), value: 8, icon: Award, color: '#28a745' }
+  ])
 
   const [activeTab, setActiveTab] = useState('overview')
 
@@ -51,14 +57,14 @@ const [stats, setStats] = useState([
       degree: t('Магистър по Компютърни Науки', 'Master of Computer Science'),
       university: t('Софийски Университет "Св. Климент Охридски"', 'Sofia University "St. Kliment Ohridski"'),
       period: '2019-2021',
-   
+      grade: t('Отличен 6.00', 'Excellent 6.00')
     },
     {
       id: 2,
       degree: t('Бакалавър по Информатика', 'Bachelor of Informatics'),
       university: t('Софийски Университет "Св. Климент Охридски"', 'Sofia University "St. Kliment Ohridski"'),
       period: '2015-2019',
-      
+      grade: t('Много Добър 5.50', 'Very Good 5.50')
     }
   ]
 
@@ -87,25 +93,29 @@ const [stats, setStats] = useState([
 
   const tabs = [
     { id: 'overview', label: t('Преглед', 'Overview') },
-
+    { id: 'experience', label: t('Опит', 'Experience') },
+ 
   ]
 
   const experiences = [
     {
       id: 1,
       position: t('Старши Софтуерен Инженер', 'Senior Software Engineer'),
+      company: 'TechCorp Ltd',
       period: t('Март 2022 - Настояще', 'Mar 2022 - Present'),
       description: t('Ръководство на екип от разработчици, проектиране на архитектура, внедряване на best practices.', 'Leading a team of developers, designing architecture, implementing best practices.')
     },
     {
       id: 2,
       position: t('Софтуерен Инженер', 'Software Engineer'),
+      company: 'WebSolutions EOOD',
       period: t('Януари 2020 - Февруари 2022', 'Jan 2020 - Feb 2022'),
       description: t('Разработка на уеб приложения, работа с клиенти, оптимизация на производителност.', 'Web application development, client work, performance optimization.')
     },
     {
       id: 3,
       position: t('Джуниър Разработчик', 'Junior Developer'),
+      company: 'StartUp BG',
       period: t('Юни 2018 - Декември 2019', 'Jun 2018 - Dec 2019'),
       description: t('Участие в разработката на MVP проекти, обучение и усъвършенстване на умения.', 'Participated in MVP project development, training and skill improvement.')
     }
@@ -125,23 +135,23 @@ const [stats, setStats] = useState([
         </div>
         
         <div className="profile-info">
-          <div className="main-profile-section">
-            <div className="large-avatar-container">
+          <div className="avatar-section">
+            <div className="avatar-container">
               <img 
                 src="/profile.png" 
                 alt="Profile" 
-                className="large-profile-avatar"
+                className="profile-avatar"
                 onError={(e) => {
-                  e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiByeD0iOTAiIGZpbGw9IiMxNjU4OTUiLz4KPHN2ZyB4PSI0NSIgeT0iNDUiIHdpZHRoPSI5MCIgaGVpZ2h0PSI5MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiPgo8cGF0aCBkPSJNMjAgMjF2LTJhNCA0IDAgMCAwLTQtNEg4YTQgNCAwIDAgMC00IDR2MiIvPgo8Y2lyY2xlIGN4PSIxMiIgY3k9IjciIHI9IjQiLz4KPC9zdmc+Cjwvc3ZnPg=='
+                  e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDE1MCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiByeD0iNzUiIGZpbGw9IiMxNjU4OTUiLz4KPHN2ZyB4PSI0MCIgeT0iNDAiIHdpZHRoPSI3MCIgaGVpZ2h0PSI3MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiPgo8cGF0aCBkPSJNMjAgMjF2LTJhNCA0IDAgMCAwLTQtNEg4YTQgNCAwIDAgMC00IDR2MiIvPgo8Y2lyY2xlIGN4PSIxMiIgY3k9IjciIHI9IjQiLz4KPC9zdmc+Cjwvc3ZnPg=='
                 }}
               />
               <motion.button 
-                className="avatar-edit-btn large"
+                className="avatar-edit-btn"
                 onClick={triggerFileInput}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <Camera size={24} />
+                <Camera size={20} />
               </motion.button>
               <input
                 type="file"
@@ -153,10 +163,13 @@ const [stats, setStats] = useState([
             </div>
             
             <div className="profile-main-info">
-              <div className="name-title-section">
-                <h1>{profile.firstName} {profile.lastName}</h1>
-                <p className="position">{profile.position}</p>
-                <p className="university">{profile.university}</p>
+              <div className="name-section">
+              
+                <div>
+                  <h1>{profile.firstName} {profile.lastName}</h1>
+                  <p className="position">{profile.position}</p>
+                  <p className="company">{profile.company}</p>
+                </div>
               </div>
               
               <div className="profile-stats">
@@ -168,9 +181,7 @@ const [stats, setStats] = useState([
                     animate={{ scale: 1 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <div className="stat-icon-wrapper">
-                      <stat.icon size={24} color={stat.color} />
-                    </div>
+                    <stat.icon size={20} color={stat.color} />
                     <div className="stat-value">{stat.value}</div>
                     <div className="stat-label">{stat.label}</div>
                   </motion.div>
@@ -180,6 +191,7 @@ const [stats, setStats] = useState([
           </div>
 
           <div className="profile-actions">
+           
             <motion.button 
               className="btn btn-primary edit-btn"
               onClick={() => setIsEditing(!isEditing)}
@@ -274,13 +286,17 @@ const [stats, setStats] = useState([
                             <div className="edu-preview-university">{edu.university}</div>
                             <div className="edu-preview-meta">
                               <span className="edu-period">{edu.period}</span>
-                              
+                              <span className="edu-grade">{edu.grade}</span>
                             </div>
                           </div>
                         </motion.div>
                       ))}
                     </div>
                   </div>
+
+               
+                 
+
                 </div>
               </motion.div>
             )}
@@ -309,12 +325,60 @@ const [stats, setStats] = useState([
                       <div className="timeline-content">
                         <h4>{exp.position}</h4>
                         <div className="company-period">
+                          <span className="company">{exp.company}</span>
                           <span className="period">{exp.period}</span>
                         </div>
                         <p className="description">{exp.description}</p>
                       </div>
                     </motion.div>
                   ))}
+                </div>
+              </motion.div>
+            )}
+
+            {activeTab === 'skills' && (
+              <motion.div
+                key="skills"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="skills-content"
+              >
+                <div className="skills-categories">
+                  <div className="skill-category">
+                    <h4>{t('Frontend', 'Frontend')}</h4>
+                    <div className="skill-levels">
+                      {['React', 'JavaScript', 'TypeScript', 'HTML/CSS'].map(skill => (
+                        <div key={skill} className="skill-level">
+                          <span className="skill-name">{skill}</span>
+                          <div className="level-bar">
+                            <div 
+                              className="level-fill"
+                              style={{ width: `${Math.random() * 50 + 50}%` }}
+                            ></div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="skill-category">
+                    <h4>{t('Backend', 'Backend')}</h4>
+                    <div className="skill-levels">
+                      {['Node.js', 'Python', 'SQL', 'MongoDB'].map(skill => (
+                        <div key={skill} className="skill-level">
+                          <span className="skill-name">{skill}</span>
+                          <div className="level-bar">
+                            <div 
+                              className="level-fill"
+                              style={{ width: `${Math.random() * 50 + 50}%` }}
+                            ></div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             )}

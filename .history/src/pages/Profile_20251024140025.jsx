@@ -37,11 +37,11 @@ const Profile = () => {
     interests: [t('Програмиране', 'Coding'), t('Планински туризъм', 'Hiking'), t('Фотография', 'Photography'), t('Четене', 'Reading')]
   })
 
-const [stats, setStats] = useState([
-  { label: t('Общо процедури', 'Total Procedures'), value: 84, icon: FileText, color: '#165895' },
-  { label: t('Завършени процедури', 'Completed Procedures'), value: 47, icon: CheckCircle, color: '#28a745' },
-  { label: t('Изчакващи процедури', 'Pending Procedures'), value: 12, icon: Clock, color: '#FFD700' },
-])
+  const [stats, setStats] = useState([
+    { label: t('Общо процедури', 'Total Procedures'), value: 84, icon: FileText, color: '#165895' },
+    { label: t('Завършени процедури', 'Completed Procedures'), value: 47, icon: CheckCircle, color: '#28a745' },
+    { label: t('Изчакващи процедури', 'Pending Procedures'), value: 12, icon: Clock, color: '#FFD700' },
+  ])
 
   const [activeTab, setActiveTab] = useState('overview')
 
@@ -87,7 +87,7 @@ const [stats, setStats] = useState([
 
   const tabs = [
     { id: 'overview', label: t('Преглед', 'Overview') },
-
+    { id: 'experience', label: t('Опит', 'Experience') },
   ]
 
   const experiences = [

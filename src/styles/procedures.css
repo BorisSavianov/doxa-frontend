@@ -1,0 +1,365 @@
+/* Procedures Page */
+.procedures-page {
+  padding: 20px;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.back-btn {
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.back-btn:hover {
+  background: #f8fafc;
+  border-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.page-header h1 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* Procedures Container */
+.procedures-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Filters Section */
+.procedures-filters {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+  border: 1px solid #e2e8f0;
+}
+
+.procedures-filters h2 {
+  margin: 0 0 20px 0;
+  color: #1e293b;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: #f8fafc;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  font-weight: 500;
+  color: #475569;
+}
+
+.filter-btn:hover {
+  background: #f1f5f9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn.active {
+  background: white;
+  border-color: #2563eb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+  color: #1e293b;
+}
+
+.filter-label {
+  font-weight: 600;
+}
+
+.filter-count {
+  background: #e2e8f0;
+  color: #475569;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  min-width: 32px;
+  text-align: center;
+}
+
+.filter-btn.active .filter-count {
+  background: #2563eb;
+  color: white;
+}
+
+/* Procedures List Section */
+.procedures-list-section {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.section-header h3 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.procedures-count {
+  background: #2563eb;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Procedures List */
+.procedures-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.procedure-card {
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.procedure-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.procedure-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.procedure-category {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.category-badge {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  text-transform: capitalize;
+}
+
+.procedure-status .status-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  padding: 4px 12px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Procedure Content with Centered Button */
+.procedure-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Центриране по вертикала */
+  gap: 16px;
+}
+
+.procedure-info {
+  flex: 1;
+}
+
+.procedure-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.procedure-date {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.procedure-actions {
+  display: flex;
+  align-items: center;
+}
+
+/* Details Button - Centered */
+.details-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: 100px;
+  height: fit-content;
+}
+
+.details-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* No Procedures State */
+.no-procedures {
+  text-align: center;
+  padding: 60px 20px;
+  color: #64748b;
+}
+
+.no-procedures h3 {
+  margin: 0 0 12px 0;
+  color: #475569;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.no-procedures p {
+  margin: 0;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .filters-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .procedures-page {
+    padding: 16px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .page-header h1 {
+    font-size: 28px;
+  }
+
+  .procedures-filters,
+  .procedures-list-section {
+    padding: 20px;
+  }
+
+  .filters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .procedure-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .procedure-actions {
+    align-self: stretch;
+    justify-content: flex-end;
+  }
+
+  .details-btn {
+    min-width: 90px;
+    padding: 8px 16px;
+  }
+
+  .section-header h3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .procedure-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .procedure-status {
+    align-self: flex-end;
+  }
+
+  .procedure-card {
+    padding: 16px;
+  }
+
+  .procedure-title {
+    font-size: 16px;
+  }
+
+  .category-badge {
+    padding: 4px 12px;
+    font-size: 11px;
+  }
+
+  .procedure-actions {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .details-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
