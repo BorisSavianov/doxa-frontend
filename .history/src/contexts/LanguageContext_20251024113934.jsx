@@ -34,34 +34,3 @@ export const LanguageProvider = ({ children }) => {
     </LanguageContext.Provider>
   )
 }
-
-// В LanguageContext.jsx, добави следния код в t функцията или създай нова:
-const calendarLocales = {
-  bg: {
-    buttonText: {
-      today: 'Днес',
-      month: 'Месец',
-      week: 'Седмица',
-      day: 'Ден',
-      list: 'Списък'
-    },
-    allDayText: 'Цял ден',
-    noEventsText: 'Няма събития'
-  },
-  en: {
-    buttonText: {
-      today: 'Today',
-      month: 'Month',
-      week: 'Week',
-      day: 'Day',
-      list: 'List'
-    },
-    allDayText: 'All day',
-    noEventsText: 'No events'
-  }
-}
-
-// Актуализирай t функцията или добави нова:
-const getCalendarLocale = () => {
-  return isEnglish ? calendarLocales.en : calendarLocales.bg
-}

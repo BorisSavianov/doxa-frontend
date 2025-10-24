@@ -1,0 +1,243 @@
+.calendar-page {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 25px;
+  height: calc(100vh - 100px);
+}
+
+.calendar-header {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.view-btn {
+  padding: 8px 16px;
+  border: 2px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.view-btn:hover,
+.view-btn.active {
+  background: var(--primary);
+  color: white;
+}
+
+.calendar-container {
+  grid-column: 1;
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border: 1px solid var(--border);
+  height: 100%;
+  min-height: 600px;
+}
+
+.calendar-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* FullCalendar Custom Styles */
+.fc {
+  height: 100%;
+}
+
+.fc .fc-toolbar {
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.fc .fc-toolbar-title {
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.fc .fc-button {
+  background: var(--primary);
+  border: 2px solid var(--primary);
+  color: white;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+.fc .fc-button:hover {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  transform: translateY(-1px);
+}
+
+.fc .fc-button:disabled {
+  background: var(--border);
+  border-color: var(--border);
+  opacity: 0.6;
+}
+
+.fc .fc-button-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #333333;
+}
+
+.fc .fc-daygrid-day-number,
+.fc .fc-col-header-cell-cushion {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.fc .fc-day-today {
+  background: rgba(255, 215, 0, 0.1) !important;
+}
+
+.fc .fc-daygrid-day.fc-day-today .fc-daygrid-day-number {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.fc .fc-event {
+  border: none;
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.fc .fc-event:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.fc .fc-daygrid-event-dot {
+  display: none;
+}
+
+.fc .fc-list-event:hover td {
+  background: rgba(255, 215, 0, 0.1);
+}
+
+/* Upcoming Events */
+.upcoming-events {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.event-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--background);
+  border-radius: 8px;
+  border-left: 4px solid var(--primary);
+  transition: var(--transition);
+}
+
+.event-item:hover {
+  transform: translateX(5px);
+  background: rgba(255, 215, 0, 0.05);
+}
+
+.event-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.event-info {
+  flex: 1;
+}
+
+.event-title {
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.event-date {
+  font-size: 0.8rem;
+  color: var(--textSecondary);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .calendar-page {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .calendar-sidebar {
+    grid-column: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .calendar-sidebar .card {
+    flex: 1;
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .calendar-controls {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .fc .fc-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fc .fc-toolbar-chunk {
+    margin-bottom: 10px;
+  }
+}
+
+/* Dark theme adjustments */
+.app.dark .fc .fc-daygrid-day {
+  background: var(--surface);
+}
+
+.app.dark .fc .fc-day-other {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.app.dark .fc .fc-daygrid-day-number {
+  color: var(--text);
+}
+
+.app.dark .fc .fc-col-header-cell {
+  background: var(--primary);
+}
+
+.app.dark .fc .fc-col-header-cell-cushion {
+  color: white;
+}
